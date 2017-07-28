@@ -39,6 +39,9 @@ public class Product extends AbstractShopifyResource {
     }
 
     public Product setPublished(boolean publish) {
-        return this.setPublishedScope(publish ? "global" : "none").setPublishedAt(publish ? DateTime.now() : null);
+    	publishedScope = (publish ? "global" : "none");
+    	publishedAt = (publish ? DateTime.now() : null);
+    	
+    	return this;
     }
 }

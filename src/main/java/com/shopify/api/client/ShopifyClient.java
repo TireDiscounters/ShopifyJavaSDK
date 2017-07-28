@@ -92,14 +92,14 @@ public class ShopifyClient {
 			if(ApiCallThrottleFeedback.atLimit()){
 				//wait here for the bucket to leak a request
 				try {
-					log.warn("Slowing WAY down, we are AT our limits...");
+					//log.warn("Slowing WAY down, we are AT our limits...");
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {} //okay so we just go now!
 			}
 			if(ApiCallThrottleFeedback.nearLimit()){
 				//wait here for the bucket to leak a request
 				try {
-					log.info("Slowing down, we are near our limits...");
+					//log.info("Slowing down, we are near our limits...");
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {} //okay so we just go now!
 			}

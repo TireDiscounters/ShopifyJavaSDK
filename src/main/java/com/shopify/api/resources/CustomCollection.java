@@ -27,6 +27,8 @@ public class CustomCollection extends AbstractShopifyResource {
     }
 
     public CustomCollection setPublished(boolean publish) {
-        return setPublishedScope(publish ? "global" : "none").setPublishedAt(publish ? DateTime.now() : null);
+        publishedScope = (publish ? "global" : "none");
+        publishedAt = (publish ? DateTime.now() : null);
+        return this;
     }
 }
