@@ -15,9 +15,10 @@ import com.shopify.api.resources.Metafield;
 @EqualsAndHashCode()
 @ToString(callSuper = true)
 @Accessors(chain = true)
+//note: these should be able to be protected with the getter and setter, but it's throwing an error that way (see product.java for example), so I've changed them to public for now
 public abstract class AbstractShopifyResource {
-	protected Long id;
-	protected DateTime createdAt;
-	protected DateTime updatedAt;
-	protected List<Metafield> metafields = new ArrayList<Metafield>();
+	public Long id;
+	public DateTime createdAt;
+	public DateTime updatedAt;
+	public List<Metafield> metafields = new ArrayList<Metafield>();
 }

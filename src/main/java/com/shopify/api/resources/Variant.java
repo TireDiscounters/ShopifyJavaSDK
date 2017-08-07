@@ -18,22 +18,28 @@ import com.shopify.api.common.AbstractShopifyResource;
 @ToString(callSuper = true)
 @Accessors(chain = true)
 @JsonRootName("variant")
+//note: these should be able to be private with the getter and setter, but it's throwing an error that way (see product.java for example), so I've changed them to public for now
 public class Variant extends AbstractShopifyResource {
-    private long productId;
-    private String compareAtPrice;
-    private String fulfillmentService;
-    private int grams;
-    private String inventoryManagement;
-    private String inventoryPolicy;
-    private int inventoryQuantity;
-    private String option1;
-    private String option2;
-    private String option3;
-    private long position;
-    private BigDecimal price;
-    private boolean requiresShipping;
-    private String sku;
-    private boolean taxable;
-    private String title;
-    private String barcode;
+    public long productId;
+    public String compareAtPrice;
+    public String fulfillmentService;
+    public int grams;
+    public String inventoryManagement;
+    public String inventoryPolicy;
+    public int inventoryQuantity;
+    public int oldInventoryQuantity;
+    public int inventoryQuantityAdjustment;
+    public String option1;
+    public String option2;
+    public String option3;
+    public long position;
+    public BigDecimal price;
+    public boolean requiresShipping;
+    public String sku;
+    public boolean taxable;
+    public String title;
+    public String barcode;
+    public String weightUnit;
+    public BigDecimal weight;
+    public long imageId;
 }

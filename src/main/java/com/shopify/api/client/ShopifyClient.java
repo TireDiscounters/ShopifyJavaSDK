@@ -56,7 +56,7 @@ public class ShopifyClient {
 				.registerModule(new JodaModule())
 
 				//this keeps the future compatibility open
-				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true)
 				
 				//this is what makes those goofy "first level" object names like: {"custom_collection":{"title":"Test 123"}}
 				.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true)
