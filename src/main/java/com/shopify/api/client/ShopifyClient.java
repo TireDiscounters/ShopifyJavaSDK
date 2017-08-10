@@ -14,7 +14,9 @@ import org.apache.commons.io.IOUtils;
 import org.jboss.resteasy.client.jaxrs.BasicAuthentication;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
-
+import org.jboss.resteasy.spi.ResteasyProviderFactory;
+import org.jboss.resteasy.plugins.providers.RegisterBuiltin;
+import org.jboss.resteasy.plugins.providers.jackson.ResteasyJackson2Provider;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.ClientResponseContext;
@@ -146,6 +148,10 @@ public class ShopifyClient {
 	}
 
 	public ShopifyClient(Credential creds) {
+		ResteasyProviderFactory instance=ResteasyProviderFactory.getInstance();
+		RegisterBuiltin.register(instance);
+		instance.registerProvider(ResteasyJackson2Provider.class);
+		    
 		createTarget(creds.getShopName(), creds.getApiKey(), creds.getPassword());
 	}
 	

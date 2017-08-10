@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.shopify.tirediscounters</groupId>
 	<artifactId>shopify-api</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.1</version>
 	<name>Shopify REST Client Library</name>
 
 	<dependencies>
@@ -51,6 +51,11 @@
 			<version>2.5.4</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,8 +65,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
