@@ -42,4 +42,5 @@ public class Variant extends AbstractShopifyResource {
     public String weightUnit;
     public BigDecimal weight;
     public long imageId;
+    public long InventoryItemId;
 }
