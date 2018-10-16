@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.shopify.tirediscounters</groupId>
 	<artifactId>shopify-api</artifactId>
-	<version>1.1.1</version>
+	<version>1.1.2-SNAPSHOT</version>
 	<name>Shopify REST Client Library</name>
 
 	<dependencies>
@@ -57,6 +57,26 @@
 			<version>2.5</version>
 		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<!--
+		For this distribution management configuration to work,
+		one must add this server configuration in one's settings.xml:
+		<server>
+			<id>td-nexus</id>
+			<username>td_dev_account</username>
+			<password>{password for this username}</password>
+		</server>
+		-->
+		<repository>
+		  <id>td-nexus</id>
+		  <url>http://td-d-lx-devsupport.tirediscountersdirect.com/nexus/repository/maven-releases/</url>
+	   </repository>
+	   <snapshotRepository>
+		  <id>td-nexus</id>
+		  <url>http://td-d-lx-devsupport.tirediscountersdirect.com/nexus/repository/maven-snapshots/</url>
+	   </snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
